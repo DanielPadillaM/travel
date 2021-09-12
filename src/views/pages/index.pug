@@ -1,0 +1,28 @@
+extends ../templates/template
+block header 
+    +nav
+block main 
+    section.page-section.home#home
+        include ../include/home.pug
+    section.page-section.about#about
+        include ../include/about.pug
+    section.page-section.discover#discover
+        include ../include/discover.pug
+    section.page-section.experience#experience
+        include ../include/experience.pug
+    section.page-section.tour#tour
+        include ../include/tour.pug
+    section.page-section.places#places
+        include ../include/places.pug
+    section.suscribe
+        include ../include/suscribe.pug
+    section.sponsor
+        include ../include/sponsor.pug
+block arrow 
+    include ../include/arrow-gadget.pug
+block footer
+    include ../include/footer.pug
+
+
+
+

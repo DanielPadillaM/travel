@@ -1,0 +1,12 @@
+.arrow-gadget{
+    @include btn;
+    font-size: var(--small-fs);
+    position: fixed;
+    bottom: 3em;
+    right: 0.8em;
+    transform: translateY(7em);
+    transition: transform 0.5s ease-in-out;
+    &.show{
+        transform: translateY(0);
+    }
+}

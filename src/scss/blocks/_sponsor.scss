@@ -1,0 +1,15 @@
+.sponsor{
+    padding-top: 3em;
+    &__container{
+        grid-template-columns: repeat(auto-fit,minmax(110px,150px));
+        align-items: center;
+        justify-content: space-around;
+        row-gap: 3.5em;
+    }
+    &__img{
+        filter: invert(.7);
+        &:hover{
+            filter: invert(.5);
+        }
+    }
+}

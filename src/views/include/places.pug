@@ -1,0 +1,5 @@
+.places__container.container.grid    
+    h2.places__title Choose Your Place
+    .places__wrapper
+        each item in placesCards
+            +card-places(item.img,item.rate,item.title,item.description,item.price)

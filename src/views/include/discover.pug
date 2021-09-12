@@ -1,0 +1,8 @@
+.discover__container.container.grid  
+    h2.discover__title Discover The Most 
+                        br 
+                        |Attractive Places
+    .discover__cards
+        each item in discoverCards
+            +card(item.img,item.title,item.description)
+

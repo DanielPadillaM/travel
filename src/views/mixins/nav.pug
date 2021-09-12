@@ -1,0 +1,14 @@
+mixin nav
+    nav.nav
+        .nav__container.container
+            a(class="nav__logo" href="#") Travel
+            ul.main-menu 
+                each page, index in pages
+                    li.main-menu__item
+                        if index == 0
+                            a(class="main-menu__link active" data-text=page href=`#${page}`)= page
+                        else 
+                            a(class="main-menu__link" data-text=page href=`#${page}`)= page
+                span.main-menu__dark-mode#dark-modeBtn
+                    <i id="dark-modeIcon" class="fas fa-moon"></i>
+            .toggle 

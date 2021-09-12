@@ -1,0 +1,42 @@
+.card{
+    position: relative;
+    width: 220px;
+    color: var(--white);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    &__rating{
+        position: absolute;
+        top: 1.5em;
+        right: 1.5em;
+    }
+    &__description{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 1.2em;
+        pointer-events: none
+    }
+    &__btn{
+        @include btn;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+    }
+    &__title{
+        font-family: var(--title-font);
+        font-size: var(--title-fs);
+    }
+    &__text,&__title{
+        color: inherit;
+    }
+    &__img{
+        display: block;
+        object-fit: cover;
+        transition: transform .5s ease-in-out;
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+}

@@ -1,0 +1,24 @@
+.tour{
+    &__container{
+        min-height: 100vh;
+        align-content: center;
+        justify-items: center;
+    }
+    &__title{
+        font-size: var(--title-fs);
+    }
+    &__video{
+        display: block;
+    }
+    &__content{
+        position: relative;
+        max-width: 600px;
+        transition-delay: .5s
+    }
+    &__btn{
+        @include btn;
+        position: absolute;
+        right: 30px;
+        bottom: -40px;
+    }
+}

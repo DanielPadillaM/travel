@@ -1,0 +1,30 @@
+@import 'base/normalize';
+@import 'config/variable';
+@import 'base/base';
+
+//mixins
+@import 'mixins/breakpoints';
+@import 'mixins/buttons';
+
+
+@import 'blocks/nav';
+@import 'blocks/toggle';
+@import 'blocks/card';
+@import 'blocks/home';
+@import 'blocks/about';
+@import 'blocks/discover';
+@import 'blocks/experience';
+@import 'blocks/tour';
+@import 'blocks/places';
+@import 'blocks/suscribe';
+@import 'blocks/sponsor';
+@import 'blocks/footer';
+
+@import 'helpers/arrow-gadget';
+
+
+
+
+
+
+

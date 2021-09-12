@@ -1,0 +1,20 @@
+@mixin btn {
+    display: inline-block;
+    padding: 0.7em 1em;
+    width: max-content;
+    height: max-content;
+    margin: 1em 0;
+    background-color: var(--first-color);
+    font-size: var(--btn-fs);
+    text-decoration: none;
+    color: var(--white);
+    letter-spacing: 2px;
+    font-weight: var(--title-fw);
+    border: none;
+
+    
+    &:hover{
+        background-color: var(--first-color-alt);
+        
+    }
+}

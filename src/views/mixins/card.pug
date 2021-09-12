@@ -1,0 +1,20 @@
+mixin card(image,title,text)
+    .card.discover__card.slide-in.from-top 
+        img(src=`./assets/img/${image}`, alt="" class="card__img") 
+        .card__description
+            h3.card__title= title
+            span.card__text= text
+
+mixin card-places(image,rate,title,text,price)
+    .card.places__card.slide-in.from-top 
+        img(src=`./assets/img/${image}`, alt="" class="card__img") 
+        .card__rating
+            span.card__stars
+                <i class="far fa-star"></i>
+            span.card__rate= rate
+        .card__description
+            h3.card__title= title
+            p.card__text= text
+            span.card__price= price
+            a(class='card__btn' href="#")
+                <i class="fas fa-arrow-right"></i>

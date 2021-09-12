@@ -1,0 +1,36 @@
+.toggle{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    &::after,&::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        border-radius: 10px;
+        background-color: currentColor;
+        transition: transform 0.2s ease-in-out;
+    }
+    &::after{
+        transform: translateY(-12px);
+        box-shadow: 0 12px 0 currentColor;
+    }
+    &::before{
+        transform: translateY(12px);
+    }
+    &.active{
+        &::before{
+            transform: translateY(0px) rotate(45deg);
+        }
+        &::after{
+            transform: translateY(0px) rotate(-45deg);
+            box-shadow: none;
+        }
+    }
+    @include desktop{
+        display: none;
+    }
+}

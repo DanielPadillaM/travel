@@ -1,0 +1,107 @@
+.home{
+    background-image: var(--bgHome) ;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    color: var(--white);
+    &__container{
+        margin-top: 2em;
+        gap: 0;
+        @include desktop{
+            gap: 1.5em;
+            margin-top: var(--header-height);
+        }
+    }
+    &__data{
+        display: grid;
+        gap: 1em;
+        &-title,
+        &-subtitle{
+            color: var(--white);
+        }
+        &-title{
+            margin: 0;
+            font-size: var(--biggest-fs);
+        }
+        &-btn{
+            @include btn;
+            transition: letter-spacing .5s ease-in-out, background-color .5s ease-in-out;
+            &:hover{
+                letter-spacing: 5px;
+                }
+        }
+    }
+
+    &__info{
+        position: absolute;
+        bottom: 3.5rem ;
+        right: 1rem;
+        display: flex;
+        align-items: center;
+        column-gap: .5rem;
+        width: 210px;
+        padding: 0.6em;
+        background-color:var(--first-color-second);
+        transition-delay: 1s;
+        @include tablet{
+            width: 240px;
+        }
+        @include laptop{
+            bottom: 4.5rem;
+            right: 5rem;
+            width: 250px;
+        }
+        @include desktop{
+            right: 12rem;
+        }
+        &-text{
+            display: block;
+            font-size: var(--small-fs);
+        }
+        &-link{
+            font-size: var(--small-fs);
+            text-decoration: none;
+            color: var(--white);
+        }
+        &-overlay{
+            overflow: hidden;
+        }
+        &-img{
+            display: block;
+            width: 135px;
+            transition: transform .5s ease-in-out;
+            @include tablet{
+                width: 155px;
+            }
+            @include desktop{
+            width: 170px;
+            }
+            &:hover{
+                transform: scale(1.5);
+            }
+        }
+    }
+    
+}
+
+.social{
+    width: max-content;
+    transition-delay: .5s;
+    &__nav{
+        display: flex;
+        flex-direction: column;
+        gap: 0.7em;
+        padding-left: 0;
+        @include desktop{
+            flex-direction: row;
+        }
+    }
+    &__item{
+        list-style: none;
+    }
+    &__link{
+        color: var(--white);
+        font-size: var(--title-fs);
+    }
+}

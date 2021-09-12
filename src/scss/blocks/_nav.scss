@@ -1,0 +1,113 @@
+.nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 4.5em;
+    background-color: transparent;
+    color: var(--white);
+    transition:  .5s ease;
+    z-index: 100;
+    @include desktop{
+        top: 1.5em;
+    }
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+    &__logo{
+        text-decoration: none;
+        color: inherit;
+        font-size: var(--title-fs);
+        font-weight: var(--title-fw);
+    }
+    &.active{
+        top: 0;
+        height: var(--header-height);
+        background-color: var(--body-color);
+        box-shadow:  0px 3px 8px rgba(0, 0, 0, 0.24);
+        color: var(--title-color);
+    }
+}
+
+.main-menu{
+    position: absolute;
+    left: -65%;
+    top: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--body-color);
+    width: 65%;
+    height: 100vh;
+    padding: 30px;
+    margin-top: 0;
+    transition: transform 1s ease-out;
+    @include desktop{
+        position: relative;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        width: 60%;
+        height: 100%;
+        padding: 0;
+        margin-bottom: 0;
+        background-color: transparent;
+        transform: translateX(0);
+    }
+    &__item{
+        list-style: none;
+    }
+    &__dark-mode{
+        font-size: var(--btn-fs);
+        cursor: pointer;
+    }
+    &__link{
+        padding: .4em 0;
+        background-size: 0% 3px;
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        background-image: linear-gradient(90deg,transparent,var(--text-color));
+        color: inherit;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: capitalize;
+        &.active,&:hover{
+            background-size: 100% 3px;
+        }
+        transition: background-size .4s ease;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) rotate(-90deg);
+            font-size: 4em;
+            font-weight: 700;
+            letter-spacing: 30px;
+            color: var(--text-color);
+            opacity: 0;
+            pointer-events: none;
+            transition: letter-spacing 0.5s ease-in-out;
+            z-index: -1;
+        }
+        &:hover::before{
+            content: attr(data-text);
+            opacity: 0.25;
+            letter-spacing: 5px;
+            @include desktop{
+                content: "";
+            }
+            
+        }
+    }
+    &.active{
+        color: var(--title-color);
+        transform: translateX(100%);
+        transition: transform 1s ease-in-out;
+    }
+}
+
