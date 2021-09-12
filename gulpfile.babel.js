@@ -56,7 +56,7 @@ gulp.task("html-min",()=>{
         collapseWhitespace:true,
         removeComments:true
     }))
-    .pipe(gulp.dest('.docs/public'))
+    .pipe(gulp.dest('.docs'))
 })
 
 gulp.task("views",()=>{
@@ -66,7 +66,7 @@ gulp.task("views",()=>{
     .pipe(pug({
         pretty: production?false:true
     }))
-    .pipe(gulp.dest('./docs/public'))
+    .pipe(gulp.dest('./docs'))
 })
 
 gulp.task("sass",()=>{
@@ -76,7 +76,7 @@ gulp.task("sass",()=>{
     .pipe(sass({
         outputStyle : "compressed"
     }))
-    .pipe(gulp.dest('./docs/public/css'))
+    .pipe(gulp.dest('./docs/css'))
     .pipe(stream())
 })
 
@@ -86,7 +86,7 @@ gulp.task("styles",()=>{
     .pipe(plumber())
     .pipe(concat("styles-min.css"))
     .pipe(postcss(cssPlugins))
-    .pipe(gulp.dest('./docs/public/css'))
+    .pipe(gulp.dest('./docs/css'))
     .pipe(stream())
 })
 
@@ -99,7 +99,7 @@ gulp.task("babel",()=>{
         presets:["@babel/env"]
     }))
     .pipe(terser())
-    .pipe(gulp.dest('./docs/public/js'))
+    .pipe(gulp.dest('./docs/js'))
 })
 
 // gulp.task("imgmin",()=>{
@@ -116,7 +116,7 @@ gulp.task("babel",()=>{
 
 gulp.task("default",()=>{
     server({
-        server:'./docs/public'
+        server:'./docs'
     })
     // gulp.watch("./src/*.html",gulp.series("html-min"))
     // gulp.watch("./src/css/*.css",gulp.series("styles"))

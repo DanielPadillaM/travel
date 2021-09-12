@@ -109,4 +109,4 @@ const slideOnScroll = new IntersectionObserver(function(entries,slideOnScroll){
 
 sliders.forEach(slider=>{
     slideOnScroll.observe(slider);
-})
+}) 
