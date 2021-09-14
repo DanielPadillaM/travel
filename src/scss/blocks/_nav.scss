@@ -7,6 +7,9 @@
     color: var(--white);
     transition:  .5s ease;
     z-index: 100;
+    @include laptop{
+        height: 4.5em;
+    }
     @include desktop{
         top: 1.5em;
     }
@@ -34,14 +37,14 @@
 .main-menu{
     position: absolute;
     left: -65%;
-    top: 99%;
+    top: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     background-color: var(--body-color);
     width: 65%;
-    height: 100vh;
+    height: calc(100vh - var(--header-height));
     padding: 30px;
     margin-top: 0;
     transition: transform 1s ease-out;
